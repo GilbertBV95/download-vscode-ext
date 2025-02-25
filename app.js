@@ -43,7 +43,7 @@ app.post('/getExtension', async (req, res) => {
 				datos.timeToclick = true;
 			} else {
 				datos.timeToclick = false;
-				datos.error = false;
+				datos.error = 'Url incorrecta';
 				datos.url = '';
 			}
 		} else {
