@@ -19,11 +19,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(morgan('tiny'));
 
-const datos = {
-	title: 'Descargar extension  para VSCode'
-};
+const datos = {};
 
 app.get('/', (req, res) => {
+	datos = {...{title: 'Descargar extension  para VSCode'}}
 	res.render('index', { datos })
 })
 
