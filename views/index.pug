@@ -1,11 +1,25 @@
 extends layout
 
 block content
-     p Descarguemos vsix
-     form(action="/getExtension", method="POST")
-      label(for="url") Url de la extension en marketplace
-      input#url(type="text", name="url", value="https://marketplace.visualstudio.com/items?itemName=mongodb.mongodb-vscode")
-      br
-      label(for="version") Version de la extension
-      input#version(type="text", name="version", value="1.12.0")
-      button(type="submit") Descargar
+	.alert.alert-success.text-center.text-capitalize.fs-3 Descarguemos vsix
+	.container-fluid
+		form(action="/getExtension", method="POST")
+			.mb-3
+			label.formLabel(for="url") Url de la extensi&oacute;n en marketplace
+			input.form-control#url(type="text", name="url" required)
+			.mb-3
+			label.formLabel(for="version") Version de la extension
+			input.form-control#version(type="text", name="version", required)
+			button.btn.btn-primary.mt-3(type="submit") Descargar
+
+	if datos.timeToclick
+		script.
+			const url = '#{datos.url}';
+			if (url) {
+				const enlace = document.createElement('a');
+				enlace.href = url;
+				enlace.target = '_blank';
+				console.log(enlace);
+				enlace.click();
+				enlace.remove();
+			}
