@@ -1,0 +1,6 @@
+{
+	"ext": "*.js, *.css, *.pug",
+	"ignore": [
+		"node_modules/**/*.*"
+	]
+}
