@@ -35,7 +35,6 @@ app.post('/getExtension', async (req, res) => {
 
 		if (itemName) {
 			const pubExt = itemName.split('=')[1];
-			console.log(itemName, pubExt)
 			const dividePubExt = pubExt.split('.')
 			const publisher = dividePubExt[0];
 			const extension = dividePubExt[1];
