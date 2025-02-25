@@ -19,15 +19,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(morgan('tiny'));
 
-const datos = {};
+let datos = {};
 
 app.get('/', (req, res) => {
-	datos = {...{title: 'Descargar extension  para VSCode'}}
-	res.render('index', { datos })
+	datos = {...{title: 'Descargar extension  para VSCode'}};
+	res.render('index', { datos });
 })
 
 app.post('/getExtension', async (req, res) => {
 	try {
+		datos = {...{title: 'Descargar extension  para VSCode'}};
 		const { url, version } = req.body;
 
 		const itemName = url.split('?')[1];
