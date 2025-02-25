@@ -41,6 +41,7 @@ app.post('/getExtension', async (req, res) => {
 			if (publisher && extension) {
 				datos.url = `https://marketplace.visualstudio.com/_apis/public/gallery/publishers/${publisher}/vsextensions/${extension}/${version}/vspackage`;
 				datos.timeToclick = true;
+				datos.error = false;
 			} else {
 				datos.timeToclick = false;
 				datos.error = 'Url incorrecta';
