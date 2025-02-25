@@ -41,7 +41,7 @@ app.post('/getExtension', async (req, res) => {
 			const extension = dividePubExt[1];
 			const vsExtUrl = `https://marketplace.visualstudio.com/_apis/public/gallery/publishers/${publisher}/vsextensions/${extension}/${version}/vspackage`;
 			const respuesta = await axios.get(vsExtUrl);
-			res.send()
+			console.log(respuesta)
 		} else {
 			res.send('Url incorrecta');
 		}
